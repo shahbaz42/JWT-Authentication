@@ -23,7 +23,7 @@ const authorization = (req, res, next) => {
   }
   try {
     const data = jwt.verify(token, "YOUR_SECRET_KEY");
-    req.userId = data._id;
+    req.userId = data.id;
     req.email = data.email;
     return next();
   } catch {
